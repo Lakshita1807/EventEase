@@ -1,0 +1,13 @@
+<div class="card m-3 p-3 border shadow-sm">
+    <h4>@EventName</h4>
+    <p><strong>Date:</strong> @EventDate.ToShortDateString()</p>
+    <p><strong>Location:</strong> @EventLocation</p>
+    <a href="@($"/details/{EventId}")" class="btn btn-primary">View Details</a>
+</div>
+
+@code {
+    [Parameter] public string EventName { get; set; } = "Sample Event";
+    [Parameter] public DateTime EventDate { get; set; } = DateTime.Today;
+    [Parameter] public string EventLocation { get; set; } = "Mumbai";
+    [Parameter] public int EventId { get; set; } = 1;
+}
